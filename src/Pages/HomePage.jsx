@@ -1,10 +1,10 @@
 import React from 'react'
-import NavBar from '../Components/NavBar'
+import Navbar from '../Components/Navbar'
 
 const HomePage = () => {
   return (
         <>
-            <NavBar />
+            <Navbar />
             <h1 className="text-3xl font-bold underline">
                 Home Page
             </h1>

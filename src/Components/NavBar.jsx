@@ -1,13 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-const NavBar = () => {
+const Navbar = () => {
   return (
 
-    <nav className="bg-gray-800">
+    <nav className="bg-cyan-900">
         <div className="flex justify-between items-center px-4 py-6">
             <h1 className="text-white font-bold">
-                Medic App
+                Medic Center App
             </h1>
             <ul className="flex">
                 <li>
@@ -19,6 +19,9 @@ const NavBar = () => {
                 <li>
                     <Link to="/patients" className="text-white hover:text-gray-400 px-4 py-2">Patients</Link>
                 </li>
+                <li>
+                    <Link to="/appointments" className="text-white hover:text-gray-400 px-4 py-2">Appointments</Link>
+                </li>
             </ul>
         </div>
     </nav>
@@ -26,4 +29,4 @@ const NavBar = () => {
   )
 }
 
-export default NavBar
+export default Navbar
