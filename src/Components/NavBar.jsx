@@ -20,7 +20,7 @@ const Navbar = () => {
                     <Link to="/patients" className="text-white hover:text-gray-400 px-4 py-2">Patients</Link>
                 </li>
                 <li>
-                    <Link to="/appointments" className="text-white hover:text-gray-400 px-4 py-2">Appointments</Link>
+                    <Link to="/appointments" className="text-white hover:text-gray-400 px-4 py-2">New</Link>
                 </li>
             </ul>
         </div>

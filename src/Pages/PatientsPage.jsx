@@ -1,7 +1,26 @@
-import React from 'react';
+import React, { useEffect, useInsertionEffect } from 'react';
+import { useState } from 'react';
 import Navbar from '../Components/Navbar';
 
 const PatientsPage = () => {
+
+const [data, setData] = useState()
+
+  useEffect (()=>{
+    const getAllPatients = async() => {
+      try {
+        const response = await fetch('127.0.0.1:8000/api/patients')
+        const patients = await response.json()
+        setData(patients)
+      } catch (error) {
+        console.log("the API has had an error",error)
+      }
+    }
+
+    getAllPatients()
+    
+  },[])
+
   return (
     <>
     <Navbar />
