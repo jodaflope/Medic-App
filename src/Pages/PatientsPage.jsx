@@ -9,8 +9,9 @@ const [data, setData] = useState()
   useEffect (()=>{
     const getAllPatients = async() => {
       try {
-        const response = await fetch('127.0.0.1:8000/api/patients')
+        const response = await fetch('http://127.0.0.1:8000/api/patients')
         const patients = await response.json()
+        console.log(patients)
         setData(patients)
       } catch (error) {
         console.log("the API has had an error",error)

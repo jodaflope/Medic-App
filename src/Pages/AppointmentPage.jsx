@@ -11,7 +11,7 @@ const AppointmentPage = ()=>{
     const onSubmit = async (data) => {
         try {
             
-            const response = await fetch('127.0.0.1:8000/api/patients', {
+            const response = await fetch('http://127.0.0.1:8000/api/patients', {
                 method: 'POST',
                 headers: {
                     'Content-type': 'application/json'
