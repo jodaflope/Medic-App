@@ -1,10 +1,10 @@
-import React, { useEffect, useInsertionEffect } from 'react';
-import { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Navbar from '../Components/Navbar';
+import Footer from '../Components/Footer';
 
 const PatientsPage = () => {
 
-const [data, setData] = useState()
+const [data, setData] = useState([])
 
   useEffect (()=>{
     const getAllPatients = async() => {
@@ -23,19 +23,29 @@ const [data, setData] = useState()
   },[])
 
   return (
-    <>
+<>
     <Navbar />
-    <br/>
-    <div className="max-w-md mx-auto bg-cyan-50 rounded-xl shadow-md overflow-hidden md:max-w-2xl">
-        <div className="md:flex">
-            <div className="p-8">
-                <div className="uppercase tracking-wide text-sm text-indigo-500 font-semibold">Patient</div>
-                <a href="#" className="block mt-1 text-lg leading-tight font-medium text-black hover:underline">Patient Name</a>
-                <p className="mt-2 text-gray-500">Patient Description</p>
+    <br />
+    {data.map
+      (
+        (patient, index) => 
+          (
+            <div key={index} className="max-w-md mx-auto bg-cyan-50 rounded-xl shadow-md overflow-hidden md:max-w-2xl">
+              <div className="md:flex">
+                <div className="p-8">
+                  <div className="uppercase tracking-wide text-sm text-cyan-900 font-semibold">
+                    Patient details
+                  </div>
+                    <p className="block mt-1 text-lg leading-tight font-medium text-black">{patient.name}</p>
+                    <p className="mt-2 text-gray-500">{patient.num_afi}</p>
+                </div>
+              </div>
             </div>
-        </div>
-    </div>
-    </>
+          )
+      )
+    }
+    <Footer/>
+  </>
   )
 }
 

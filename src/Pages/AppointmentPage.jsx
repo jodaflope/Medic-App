@@ -2,6 +2,7 @@ import React from 'react'
 import { useForm } from 'react-hook-form'
 import { useNavigate } from 'react-router-dom'
 import Navbar from '../Components/Navbar'
+import Footer from '../Components/Footer'
 
 const AppointmentPage = ()=>{
     //127.0.0.1:8000/api/patients
@@ -11,7 +12,7 @@ const AppointmentPage = ()=>{
     const onSubmit = async (data) => {
         try {
             
-            const response = await fetch('http://127.0.0.1:8000/api/patients', {
+            const response = await fetch('127.0.0.1:8000/api/patients', {
                 method: 'POST',
                 headers: {
                     'Content-type': 'application/json'
@@ -93,6 +94,8 @@ const handleSubmit = (event)=>{
             </div>
         </div>
     </div>
+    <br/>
+    <Footer/>
     </>
   )
 }
